@@ -4,16 +4,29 @@ require.config({
 		'jqcookie': 'jquery.cookie'
 	}
 });
-define(['jquery', 'jqcookie'], function() {;
+define(['jquery', 'jqcookie'], function() {
+	var $Cookieid =null;
+	var $Cookienum=null
+	function haveCookie() {
+		if(getCookie('picid')) {
+			$Cookieid = getCookie('picid');
+			$Cookienum = getCookie('shopnum');
+		}
+	}
 	(function() {
-		var $data=getCookie('picid').split('');
-		var $datanum=getCookie('shopnum').split('');
-		console.log($data);
-		console.log($datanum);
-		$.each($data,function(index,value){
-			getdata(value,$datanum[index])
+		haveCookie();
+		if($Cookieid) {
+			$('.shop_tips').hide();
+			var $data = $Cookieid.split(',');
+			var $datanum = getCookie('shopnum').split(',');
+		} else {
+			$('.shop_tips').show();
+		}
+		$.each($data, function(index, value) {
+			getdata(value, $datanum[index])
 		});
-		function getdata(obj,num) {
+
+		function getdata(obj, num) {
 			$.ajax({
 					url: "http://127.0.0.1/js/work/happyGo/php/shopcar.php?__hbt=1526548052253",
 					async: true,
@@ -49,9 +62,9 @@ define(['jquery', 'jqcookie'], function() {;
 				</div>
 				<div class="cell p_quantity">
 					<div class="quantity_form">
-						<a href="" class="a_red">-</a>
-						<input type="text" value='${num}' />
-						<a href="" class="a_add">+</a>
+						<a href="javascript:;" class="a_red">-</a>
+						<input type="text" value='${num}' class='shopnum'/>
+						<a href="javascript:;" class="a_add">+</a>
 					</div>
 				</div>
 				<div class='cell p_sum'>
@@ -69,14 +82,40 @@ define(['jquery', 'jqcookie'], function() {;
 
 				});
 		}
+	})();;
+	(function() {
+		 haveCookie();
+		$('.item_list').on('click', '.p_ops a', function() {
+			$.each($Cookieid.split(','),function(index,value){
+				console.log(value);
+			}) 
+//			delCookie('picid');
+//			delCookie('shopnum');
+//			$(this).first().parent().parent().remove();
+			if($Cookieid) {
+				$('.shop_tips').hide();
+			} else {
+				$('.shop_tips').show();
+			}
+		})
 
 	})();;
 	(function() {
-		$('.item_list').on('click', '.p_ops a', function() {
-			delCookie('picid');
-			delCookie('shopnum');
-			console.log($(this).first().parent().parent().remove());
+		$('.item_list').on('click', '.a_red', function() {
+			var $num = parseInt($('.shopnum').val());
+			$num--;
+			if($num <= 1) {
+				$num = 1;
+			}
+			$('.shopnum').val($num);
+		});
+		$('.item_list').on('click', '.a_add', function() {
+			var $num = parseInt($('.shopnum').val());
+			$num++;
+			if($num >= 999) {
+				$num = 999;
+			}
+			$('.shopnum').val($num);
 		})
-
 	})();
 });
