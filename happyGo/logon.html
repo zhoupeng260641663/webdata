@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/logon.css" />
+		<script src="js/require.js" defer async="true" data-main="js/logonmain.js"></script>
+		
+	</head>
+
+	<body>
+		<header>
+			<div class="width1000">
+				<div class="header_center">
+					<div class="logo">
+						<a href="index2.html"><img src="img/logo.jpg" alt="" /></a>
+					</div>
+					<div class="header_center_right">
+						<img src="img/top_cente r1.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="body">
+			<div class="width980">
+				<div class="body_content">
+					<div class="body_left">
+						<img src="http://ecimg.happigo.com/data/upload/shop/adv/05657833660318005.jpg" alt="" />
+					</div>
+					<div class="body_right">
+						<div class="body_right_h2">
+							<h2>用户注册</h2>
+							<div>
+								已有帐号
+								<a href="register.html">在此登录</a>
+							</div>
+						</div>
+						<div class="form">
+							<form action="http://127.0.0.1/js/work/happyGo/php/logonsubmit.php?__hbt=1526527555982" method="post">
+								<div class="item userphone">
+									<div>
+									<input type="text" placeholder="请输入手机号码" class="phone" name="phone"/>
+										
+									</div>
+
+									<div class="err_box phone_err" >
+										<div>
+											请输入11位手机号码
+										</div>
+
+									</div>
+								</div>
+								<div class="item phone_yzm">
+									<div style="display: inline-block;">
+									<input type="text" placeholder="验证码" class='yzm logonyzm' />
+										
+									</div>
+
+									<a href="javasrcipt:;">获取短信验证码</a>
+									<div class="err_box">
+										<div>
+											请输入发送给您手机上的验证码
+										</div>
+
+									</div>
+								</div>
+								<div class="item psd1">
+									<div>
+									<input type="password" placeholder="请输入密码" class="password1" name="password"/>
+										
+									</div>
+
+									<div class="err_box">
+										<div>
+											请输入您的密码,您的密码可能为字母、数字或符号组合
+										</div>
+
+									</div>
+								</div>
+								<div class="item psd2">
+									<div>
+									<input type="password" placeholder="请再次输入密码" class="password2"/>
+										
+									</div>
+
+									<div class="err_box">
+										<div>
+											请输入您的密码,您的密码可能为字母、数字或符号组合
+
+										</div>
+
+									</div>
+								</div>
+								<div class="item img_yzm">
+									<div style="display: inline-block;">
+									<input type="text" placeholder="验证码" class='yzm picyzm' />
+										
+									</div>
+
+							
+									<a href="javasrcipt:;" class="ranyzm"></a>
+									
+									<a href="javasrcipt:;"class="changeyzm">换一张</a>
+									<div class="err_box">
+										<div>
+											请输入右侧验证码
+
+										</div>
+
+									</div>
+								</div>
+								<div>
+									<div class="subbtn">
+										<input type="submit" value="立即注册" name="submit"/>
+										<!--<a href="http://127.0.0.1/js/work/happyGo/php/logon.php?__hbt=1526519005028">立即注册</a>-->
+									</div>
+									<div class="agreement">
+										<input type="checkbox" />
+										<label for="">注册即表示同意快乐购<span><a href="">《用户服务协议》</a></span>条款</label>
+									</div>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="width1200">
+				<div class="footer_content">
+					<p>
+						<span>
+                Copyright© 2006-2016 happigo. All Rights Reserved 免费服务热线: 400-705-1111 | 固话也可拨打: 400-705-8800 E-Mail: service@happigo.com
+              </span><br />
+						<span>
+                	
+                湘ICP备17009657号 信息网络传播视听节目许可证号：1810530
+            
+                </span>
+					</p>
+					<p class="last_p">
+						<a href=""><img src="img/foot_img3.png"/></a>
+						<a href=""><img src="img/foot_img4.png"/></a>
+					</p>
+				</div>
+			</div>
+		<script src="js/logonmain.js" type="text/javascript" charset="utf-8"></script>
+		</footer>
+	</body>
+
+</html>

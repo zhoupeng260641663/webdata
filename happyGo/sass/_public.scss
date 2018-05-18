@@ -1,0 +1,434 @@
+@charset "utf-8";
+$left:left;
+$right:right;
+$liststyleno:none;
+$color8c8c8c:#8c8c8c;
+$nounderline:none;
+$wrapwidth:1200px;
+$autocenter:auto;
+$verticalmiddle:middle;
+$fontsize12:12px;
+$fontfamliy:"宋体";
+$fontsize16:16px;
+$backgroundline:#dfdfdf none repeat scroll 0 0;
+$inline-block:inline-block;
+$noblock:none;
+$colorccc:#ccc;
+$colorfff:#fff;
+$color666:#666;
+$icon_list:url(../img/icon_list.png);
+$norepeat:no-repeat;
+$songti:'宋体';
+
+
+%afterdiv {
+    content: '';
+    overflow: hidden;
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+@mixin bd($borderstyle:solid, $bordercolor:#dfdfdf, $borderwidth:1px) {
+    border: $borderwidth $borderstyle $bordercolor;
+}
+
+@mixin radius($radius:5px) {
+    -webkit-border-radius: $radius;
+    -o-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+  .line {
+        background: $backgroundline;
+        height: 14px;
+        width: 1px;
+        display: $inline-block;
+        vertical-align: $verticalmiddle;
+    }
+header {
+    border-bottom: 2px solid #94193f;
+    height: 215px;
+}
+
+header::after {
+    @extend %afterdiv
+}
+
+.top_top {
+    background: #fafafa;
+    @include bd(1px, solid, #dfdfdf);
+}
+
+.header_top::after {
+    @extend %afterdiv
+}
+
+.header_top {
+    line-height: 36px;
+    font-size: $fontsize12;
+    font-family: $fontfamliy;
+    color: $color8c8c8c;
+    a {
+        color: $color8c8c8c;
+        text-decoration: $nounderline;
+        display: $inline-block;
+        &:hover {
+            text-decoration: underline;
+            color: #c41f3a;
+        }
+    }
+  
+    .header_top_left {
+        float: $left;
+        span {
+            display: $inline-block;
+        }
+        .login {
+            padding: 0 10px 0 20px;
+        }
+        .register {
+            padding-left: 8px;
+        }
+    }
+}
+
+.header_top_right {
+    float: $right;
+    ul {
+        list-style: $liststyleno;
+    }
+    li {
+        float: $left;
+        position: relative;
+        a {
+            padding: 0 10px;
+        }
+    }
+    i {
+        display: inline-block;
+        margin: 0 4px 0 10px;
+        vertical-align: middle;
+        width: 14px;
+        height: 13px;
+        background: $icon_list $norepeat 0 -38px;
+    }
+    b {
+        background: $icon_list $norepeat scroll -157px -696px;
+        margin-left: 5px;
+        display: $inline-block;
+        height: 6px;
+        width: 10px;
+    }
+    .li_tel {
+        padding-right: 10px;
+    }
+    .hovernav {
+        position: relative;
+    }
+    .hovernav>a {
+        border: 1px solid #fff;
+        border-bottom: none;
+    }
+    .QR {
+        position: absolute;
+        top: 36px;
+        left: -10px;
+        border: 1px solid #f6f6f6;
+        box-shadow: 0 0 1px #f6f6f6;
+        padding: 5px;
+        margin-top: 5px;
+        display: $noblock;
+        z-index: 6;
+        background: $colorfff;
+    }
+    .qrcode:hover .QR {
+        display: block;
+    }
+    .hidennav {
+        border: 1px solid $colorccc;
+        border-top: none;
+        line-height: 25px;
+        position: absolute;
+        display: $noblock;
+        background: $colorfff;
+        z-index: 6;
+    }
+    .hovernav:hover>a {
+        border: 1px solid #ccc;
+        border-bottom: none;
+        background: $colorfff;
+    }
+    .hovernav:hover .hidennav {
+        display: block;
+    }
+}
+
+.wrap {
+    width: $wrapwidth;
+    margin: 0 $autocenter;
+}
+
+.header_center_content {
+    margin-top: 30px;
+    margin-bottom: 38px;
+    &::after {
+        @extend %afterdiv
+    }
+    .logo {
+        float: $left;
+        margin-right: 7px;
+    }
+    .top_center1 {
+        float: $left;
+        margin-right: 15px;
+        padding-top: 24px;
+        width: 457px;
+    }
+    .search {
+        float: $left;
+        margin-top: 19px;
+        width: 494px;
+        height: 35px;
+        margin-top: 19px;
+        border: 3px solid #94193f;
+        input[type=text] {
+            width: 397px;
+            height: 34px;
+            font-size: $fontsize12;
+            border: none;
+            outline: none;
+            text-indent: 8px;
+        }
+        input[type=submit] {
+            height: 35px;
+            width: 97px;
+            float: $right;
+            background-color: #94193f;
+            border: none;
+            cursor: pointer;
+            color: $colorfff;
+            outline: none;
+            font-size: $fontsize16;
+        }
+        p {
+            &::after {
+                @extend %afterdiv
+            }
+            margin-top: 8px;
+            line-height: 25px;
+            a {
+                padding: 0 5px 0 0;
+                color: #8c8c8c;
+                font-family: "宋体";
+                font-size: $fontsize12;
+                float: $left;
+                &:hover {
+                    color: #94193f;
+                    ;
+                }
+            }
+        }
+    }
+    .shopcar {
+        //我的购物车
+        border: 1px solid #d8d8d8;
+        float: $right;
+        margin-top: 19px;
+        background-color: #f9f9f9;
+        position: relative;
+        a {
+            color: $color666;
+            display: block;
+            width: 129px;
+            height: 39px;
+            line-height: 39px;
+            position: relative;
+            .b_car {
+                background: $icon_list $norepeat -184px -736px;
+                display: block;
+                width: 21px;
+                height: 15px;
+                float: $left;
+                margin-left: 16px;
+                margin-top: 12px;
+            }
+            .b_right {
+                background: $icon_list $norepeat -270px -737px;
+                display: block;
+                width: 18px;
+                height: 15px;
+                float: $right;
+                margin-right: 7px;
+                margin-top: 14px;
+            }
+            .shopnum {
+                background-color: #94193f;
+                width: 16px;
+                height: 16px;
+                line-height: 16px;
+                display: block;
+                position: absolute;
+                top: -4px;
+                right: 20px;
+                @include radius(50%);
+                text-align: center;
+                color: $colorfff;
+            }
+        }
+        &:hover {
+            border: 1px solid #e2e2e2;
+            border-bottom: none;
+            background-color: $colorfff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        .shopcarlist {
+            position: absolute;
+            top: 40px;
+            padding: 18px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #666666;
+            font-family: "宋体";
+            width: 308px;
+            right: 0;
+            background-color: $colorfff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        .fffborder {
+            position: absolute;
+            height: 5px;
+            width: 100%;
+            background-color: $colorfff;
+            top: 35px;
+            z-index: 5;
+            display: none;
+        }
+        &:hover .shopcarlist,
+        &:hover .fffborder {
+            display: block;
+        }
+    }
+}
+
+.header_footer {
+    &::after {
+        @extend %afterdiv
+    }
+    li {
+        float: left;
+        padding: 0 30px;
+        position: relative;
+        height: 39px;
+        line-height: 39px;
+        a {
+            font-size: $fontsize16;
+            color: #303030;
+        }
+            
+    }
+    .first {
+        //第一个li
+        width: 215px;
+        padding: 0;
+        text-align: center;
+        background-color: #94193f;
+        position: relative;
+        a {
+                letter-spacing: 2px;
+            color: $colorfff;
+            float: $left;
+            padding-left: 55px;
+        }
+        b {
+            background: $icon_list $norepeat -36px -128px;
+            display: block;
+            height: 8px;
+            width: 16px;
+            position: absolute;
+            right: 16px;
+            top: 19px;
+        }
+    }
+    .two {
+        //第二个li    
+        padding: 0 30px 0 60px;
+        a {
+            color: #94193f;
+            font-weight: bold;
+        }
+    }
+}
+
+
+//底部
+footer{}
+.foot_top_img{
+        border-bottom: 1px solid #d7d7d7;
+}
+.foot_help{
+    &::after {
+        @extend %afterdiv
+    }
+    padding-top: 40px;
+    dl{
+        color: $color666;
+        padding: 0 60px 0 50px;
+        float: left;
+        a{line-height: 22px; color: $color666;}
+        h3{height: 31px;font-weight: normal;}
+    }
+    .foot_qr{text-align: center;float:$left;
+        li{
+            float:$left;margin-right: 20px;
+            h3{height: 31px;}
+        }
+    }
+}
+.foot_nav{
+    border-bottom: 4px solid #a90202;
+     &::after {
+        @extend %afterdiv
+    }
+  
+        margin-top: 45px;
+      
+
+    ul{
+        text-align: center;
+        &::after {
+            @extend %afterdiv
+        }
+    }
+    li{
+        height: 35px;
+        display: inline-block;
+        line-height: 35px;
+        padding-right: 12px;
+    a {
+          color: $color666;
+          font-family: $songti;
+        }
+    }
+    .line{margin-left: 14px;}
+}
+.footer_buttom{
+    text-align: center;
+    line-height: 25px;
+    color: #7e7e7e;
+    background:  #f3f3f3;
+    p{
+        padding-top: 10px;
+        img{display:inline-block;}
+        a{color: #434343;}
+   
+    }
+    .footer_buttom_buttom{ padding: 30px 0 40px 0;}
+}

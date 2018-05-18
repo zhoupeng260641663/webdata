@@ -1,0 +1,774 @@
+@charset "UTF-8";
+@import 'public';
+%afterdiv {
+    content: '';
+    overflow: hidden;
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    &::after {
+        @extend %afterdiv
+    }
+    height: 380px;
+    .banner_nav {
+        bottom: 10px;
+        height: 28px;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        .banner_list {
+            width: 93px;
+            margin: 0 auto;
+            height: 28px;
+            line-height: 28px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            span {
+                cursor: pointer;
+                width: 11px;
+                height: 11px;
+                display: inline-block;
+                margin: 7.5px 5px;
+                background-color: #fff;
+                border-radius: 5px;
+                text-indent: 999px;
+            }
+            .active {
+                background: red;
+            }
+        }
+    }
+}
+
+.mart40 {
+    margin-top: 40px;
+}
+
+.banner_img {
+    height: 380px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    li {
+        position: absolute;
+        left: -190.5px;
+        opacity: 0;
+        z-index: 0;
+        transition: all 0.5s;
+    }
+    .visible {
+        opacity: 1;
+    }
+    &::after {
+        @extend %afterdiv
+    }
+}
+
+.shopnav {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -600px;
+    width: 215px;
+    height: 380px;
+    background: url(../img/index_type_bg.png);
+    z-index: 4;
+    ul li:nth-of-type(1) i {
+        background-position: -0px -421px;
+    }
+    ul li:nth-of-type(2) i {
+        background-position: 0 -166px;
+    }
+    ul li:nth-of-type(3) i {
+        background-position: 0 -128px;
+    }
+    ul li:nth-of-type(4) i {
+        background-position: 0 -211px;
+    }
+    ul li:nth-of-type(5) i {
+        background-position: 0 -253px;
+    }
+    ul li:nth-of-type(6) i {
+        background-position: 0 -336px;
+    }
+    ul li:nth-of-type(7) i {
+        background-position: 0 -376px;
+    }
+    ul {
+        width: 100%;
+        padding-top: 5px;
+        position: relative;
+        li {
+            padding-left: 55px;
+            height: 35px;
+            line-height: 35px;
+            margin-top: 15px;
+            cursor: pointer;
+            left: -190.5px;
+            i {
+                background: url(../img/type_icon.png);
+                vertical-align: middle;
+                margin-right: 5px;
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+            }
+            a {
+                color: #333;
+                font-size: 14px;
+            }
+        }
+    }
+    .twonav {
+        display: none;
+        position: absolute;
+        left: 215px;
+        width: 370px;
+        background-color: #fff;
+        z-index: 5;
+        padding: 20px 0 10px 15px;
+        top: 0px;
+        min-height: 351px;
+        li {
+            float: left;
+            padding: 0;
+            margin: 0 0 10px 0;
+            text-align: left;
+            padding-right: 10px;
+            height: 24px;
+            line-height: 24px;
+            white-space: nowrap;
+        }
+        a {
+            padding-left: 4px;
+            color: #fff;
+            font-size: 12px;
+            background-color: #9b9093;
+            display: block;
+            &:hover {
+                color: #fff;
+                background-color: #94193f;
+            }
+        }
+        i {
+            display: inline-block;
+            background-color: #837679;
+            width: 19px;
+            text-align: center;
+            margin-left: 6px;
+            background: none;
+            vertical-align: baseline;
+        }
+    }
+    ul li:hover .twonav {
+        display: block;
+    }
+}
+
+.side {
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40px;
+    background-color: #444851;
+    height: 100%;
+    min-height: 600px;
+    a {
+        color: #fff;
+    }
+    .side_box {
+        position: relative;
+        height: 100%;
+    }
+    .side_top {
+        //侧边栏顶部部分
+        margin: 5px 0;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        height: 360px;
+        margin-top: -270px;
+        right: 0;
+    }
+    i {
+        display: block;
+        background: url(../img/icon_list.png);
+        width: 30px;
+        height: 23px;
+        margin: 0;
+    }
+    .account {
+        padding: 5px 0;
+        margin-bottom: 40px;
+        i {
+            background-position: -190px -413px;
+        }
+        div {
+            width: 39px;
+            padding: 5px 0 0 0;
+            text-align: center;
+        }
+    }
+    .side_car {
+        margin: 5px 0;
+        i {
+            background-position: -76px 0;
+            margin-bottom: 5px;
+        }
+        div {
+            width: 17px;
+            padding: 0 11px;
+        }
+    }
+    .getop {
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        i {
+            background-position: -83px -252px;
+            width: 19px;
+            height: 19px;
+            margin: 5px 10px;
+        }
+    }
+}
+
+.body {
+    button {
+        position: absolute;
+        top: 50%;
+        position: absolute;
+        top: 90px;
+        width: 30px;
+        height: 70px;
+        text-align: center;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: url(../img/icon_list.png) repeat scroll;
+        background-color: #575757;
+        display: none;
+        z-index: 999;
+    }
+    .buttonleft {
+        left: 0;
+        background-position: -114px -330px;
+    }
+    .buttonright {
+        right: 0;
+        background-position: -211px -330px;
+    }
+    .title2 {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #c4193f;
+        &::after {
+            @extend %afterdiv
+        }
+        margin-top: 0px;
+        width: 100%;
+        p {
+            float: left;
+            font-size: 28px;
+            padding-bottom: 4px;
+            color: #333333;
+        }
+        ul {
+            float: right;
+            height: 37px;
+            line-height: 37px;
+            margin-top: 9px;
+        }
+        li {
+            float: left;
+            a {
+                padding: 0 12px;
+                display: block;
+                height: 35px;
+                background-color: #fff;
+                border: 2px solid #fff;
+                border-bottom: none;
+                padding-top: 0;
+                color: #434343;
+                font-size: 14px;
+            }
+            .active {
+                border-bottom: 1px solid #fff;
+                color: #c4193f;
+                border-left: 2px solid #c4193f;
+                border-right: 2px solid #c4193f;
+                border-top: 2px solid #c4193f;
+            }
+        }
+    }
+}
+
+//今日直播
+.todaylive {
+    &::after {
+        @extend %afterdiv
+    }
+    .title {
+        margin-bottom: 10px;
+    }
+    margin-top: 40px;
+    .title li {
+        color: #333;
+        cursor: pointer;
+        float: left;
+        font-size: 18px;
+        height: 48px;
+        position: relative;
+        padding: 0 20px;
+        z-index: 9;
+        line-height: 48px;
+        a {
+            color: #333;
+        }
+        .underline {
+            //今日直播下划线
+            position: absolute;
+            bottom: -1px;
+            width: 100%;
+            height: 3px;
+            background-color: #000;
+            left: 0%;
+        }
+    }
+    .title .program {
+        //节目表样式
+        margin-left: -40px;
+        a {
+            border-radius: 15px;
+            color: #fff;
+            font-size: 18px;
+            height: 27px;
+            line-height: 27px;
+            width: 99px;
+            background: #eb2d58;
+            float: left;
+            display: block;
+            margin-top: 11px;
+            text-align: center;
+            i {
+                background: url(../img/icon_list.png) no-repeat -183px -488px;
+                display: inline-block;
+                vertical-align: top;
+                width: 18px;
+                height: 24px;
+            }
+        }
+    }
+    .todaylive_line {
+        //今日直播边框样式
+        width: 95px;
+        height: 44px;
+        border: none;
+        padding: 0;
+        margin: 0;
+        i {
+            display: block;
+            height: 14px;
+            position: absolute;
+            top: 19px;
+            width: 1px;
+            background-color: #8c8c8c;
+            left: 47px;
+        }
+    }
+}
+
+.todaylive .title {
+    //今日直播下标题
+    height: 47px;
+    border-bottom: 1px solid #cfcfcf;
+    margin: 0px 23px 0 23px;
+    padding-top: 8px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.list {
+    //商品列表样式
+    padding: 10px 35px 0 35px;
+    position: relative;
+    width: 1130px;
+    overflow: hidden;
+    ul {
+        position: relative;
+        overflow: hidden;
+        &::after {
+            @extend %afterdiv
+        }
+    }
+    li {
+        width: 220px;
+        float: left;
+        border: 3px solid #fff;
+        margin: 4px 0px;
+        padding: 0;
+        position: relative;
+        &:hover {
+            border: 3px solid #c4193f;
+            transition: all 0.3s ease-in 0s;
+        }
+        &:hover p,
+        &:hover .list_title a {
+            text-decoration: underline;
+        }
+    }
+    .img {
+        height: 220px;
+        overflow: hidden;
+    }
+    a {
+        display: block;
+        width: 220px;
+        &:hover img {
+            transform: scale(1.1);
+            -webkit-transition: all 0.6s ease 0s;
+        }
+    }
+    p {
+        color: #787878;
+        padding: 0 5px;
+        font-family: "宋体";
+        height: 1.4em;
+        line-height: 1.4em;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+    .shoptime {
+        background: url(../img/icon_list.png)repeat scroll -1px -350px;
+        color: #fff;
+        height: 27px;
+        left: 3px;
+        line-height: 27px;
+        position: absolute;
+        top: 3px;
+        width: 61px;
+        z-index: 9;
+        i {
+            background: url(../img/icon_list.png) repeat scroll -168px -305px;
+            display: block;
+            float: left;
+            height: 23px;
+            width: 26px;
+        }
+    }
+    .list_title {
+        //商品标题
+        display: block;
+        height: 2.8em;
+        line-height: 1.4em;
+        overflow: hidden;
+        padding: 0px 5px 0px 5px;
+        margin-top: 5px;
+        a {
+            color: #000;
+            font-size: 13px;
+            font-family: "宋体";
+        }
+    }
+    .tv_price {
+        color: #969696;
+        height: 30px;
+        line-height: 30px;
+        padding: 10px 5px 5px 5px;
+        .color_c4193f {
+            color: #c4193f;
+        }
+        .firstspan {
+            font-size: 14px;
+        }
+        .lastspan {
+            font-size: 20px;
+        }
+    }
+    &:hover button {
+        display: block;
+    }
+}
+
+//限时抢购
+.shoplist {
+    position: relative;
+    margin-top: 40px;
+    .overtimer {
+        text-align: center;
+        height: 27px;
+        width: 100%;
+        background: #fef6eb;
+        line-height: 27px;
+        color: #e31539;
+        font-size: 12px;
+        i {
+            background: url(../img/icon_list.png)no-repeat scroll -167px -271px;
+            display: inline-block;
+            vertical-align: middle;
+            width: 13px;
+            height: 17px;
+        }
+    }
+    .list {
+        display: none;
+    }
+    .listblock {
+        display: block;
+    }
+    .list li {
+        width: 228px;
+        border: none;
+        margin-right: 12px;
+    }
+    .list li:hover {
+        border: none;
+    }
+    .list li:hover img {
+        transform: none;
+        opacity: 0.53;
+        transition: none;
+    }
+    .tv_price {
+        border: 1px solid red;
+        height: 33px;
+        padding: 0;
+        .overprice {
+            float: left;
+        }
+        span {
+            float: left;
+        }
+        a {
+            float: right;
+            width: 110px;
+            height: 33px;
+            background: #c4193f;
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+}
+
+.list li {
+    border: 3px solid #fff;
+}
+
+.shoplist,
+.newlist {
+    .list {
+        padding: 0;
+        width: 100%;
+        display: none;
+    }
+    .listblock {
+        display: block;
+    }
+    //  .list li{width: 228px;}
+    .list li:hover img {
+        transform: none;
+        transition: none;
+    }
+    img {
+        width: 228px;
+    }
+}
+
+.list li:hover {
+    border: 3px solid #c4193f;
+}
+
+.newlist .list ul li {
+    width: 220px;
+    margin-right: 3px;
+}
+
+.activity {
+    //精选活动
+    ul {
+        &::after {
+            @extend %afterdiv
+        }
+    }
+    li {
+        float: left;
+        margin-top: 20px;
+        margin-right: 12px;
+    }
+}
+
+.cosmetics {
+    //个护美妆
+    .list {
+        padding: 0;
+        position: relative;
+        width: 100%;
+        li {
+            width: 224px;
+        }
+        .bigimg {
+            width: 710px;
+            a {
+                width: 710px;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    li {
+        margin-right: 8px;
+    }
+    ul li:hover img {
+        transform: none;
+    }
+    .nomargin {
+        margin-right: 0;
+    }
+}
+
+.brand {
+    //品牌列表
+    width: 1194px;
+    height: 111px;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+    background-color: #fff;
+    position: relative;
+    span {
+        width: 96px;
+        text-align: left;
+        line-height: 111px;
+        dingisplay: block;
+        float: left;
+        color: #333333;
+        font-size: 16px;
+        padding-left: 30px;
+    }
+    ul {
+        float: left;
+        margin: 15px 0;
+        width: 1067px;
+        height: 80px;
+        overflow: hidden;
+        position: relative;
+    }
+    li {
+        float: left;
+        padding: 0 19px;
+    }
+    a {
+        display: table-cell;
+        width: 80px;
+        height: 80px;
+        vertical-align: middle;
+        text-align: center;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.fixedsearch {
+    display: none;
+    background: url(../img/search_fixed_bg.png);
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0;
+    height: 52px;
+    z-index: 999;
+    .width1200 {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .s_fixed_l {
+        float: left;
+        width: 120px;
+        padding-left: 18px;
+        padding-top: 5px;
+    }
+    .s_fixed_r {
+        float: left;
+        padding-top: 10px;
+        position: relative;
+    }
+    .txt_f_sb {
+        width: 805px;
+        border: 1px solid #fff;
+        height: 19px;
+        padding: 5px 0 5px 5px;
+        float: left;
+        font-family: "宋体";
+        font-size: 12px;
+        color: #666666;
+    }
+    .f_btn_search {
+        border: 1px solid #c41f3a;
+        background-color: #c41f3a;
+        width: 90px;
+        height: 31px;
+        line-height: 26px;
+        display: block;
+        float: left;
+        color: #fff;
+        font-size: 16px;
+    }
+}
+
+.left_slider {
+    color: #000;
+    text-align: center;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    width: 92px;
+    margin-left: -720px;
+    background-color: #fff;
+    border: 1px solid #e7e6e6;
+    border-radius: 5px;
+    display: none;
+}
+
+.ul_l_s li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+    padding-bottom: 10px;
+    text-align: left;
+    a {
+        display: block;
+        height: 23px;
+        line-height: 23px;
+        color: #434343;
+        text-align: center;
+    }
+
+}
+.ul_l_s .active a {
+        background-color: #c4193f;
+        border-radius: 3px;
+        color: #fff;
+    }
+.ul_l_s {
+    padding: 10px 8px;
+}
+
+.ul_l_s li:last-child {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}

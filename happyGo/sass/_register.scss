@@ -1,0 +1,169 @@
+@charset "utf-8";
+%afterdiv {
+    content: '';
+    overflow: hidden;
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+header {
+    height: 120px;
+}
+
+.w980 {
+    &::after {
+        @extend %afterdiv
+    }
+    width: 980px;
+    margin: 0 auto;
+}
+
+.logn_b_l {
+    float: left;
+    width: 600px;
+    text-align: center;
+    padding-top: 23px;
+}
+
+.logn_b_r {
+    float: left;
+    width: 367px;
+    height: 600px;
+}
+
+.lognul {
+    padding: 0 25px;
+    &::after {
+        @extend %afterdiv
+    }
+    h2 {
+        color: #c41f3a;
+        font-size: 22px;
+        height: 38px;
+        line-height: 38px;
+        font-weight: bold;
+        float: left;
+        padding-bottom: 20px;
+    }
+    .mc {
+        display: none;
+    }
+    .mc1 {
+        display: block;
+    }
+}
+
+.lognrtop {
+    &::after {
+        @extend %afterdiv
+    }
+    float: right;
+    height: 38px;
+    line-height: 38px;
+    a {
+        color: #c41f3a;
+    }
+}
+
+.radio_box {
+    padding: 0 25px 10px 25px;
+    input {
+        vertical-align: middle;
+    }
+}
+
+.s_radio {
+    padding-right: 45px;
+}
+
+.form .item .itxt_yzm {
+    width: 157px;
+    float: left;
+}
+
+.yzm_box {
+    &::after {
+        @extend %afterdiv
+    }
+    a {
+        display: block;
+    }
+    img {
+        display: inline-block;
+        float: left;
+        margin-left: 12px;
+        margin-right: 5px;
+    }
+    .getyzm {
+        margin-left: 17px;
+        color: #444444;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        outline: 0;
+        display: inline-block;
+        border: 1px solid #c8c8c8;
+        width: 117px;
+        height: 38px;
+        line-height: 38px;
+        vertical-align: top;
+    }
+    .changeimg {
+        color: #c41f3a;
+        font-size: 12px;
+        float: none;
+        display: inline-block;
+        line-height: 38px;
+    }
+}
+
+.safe span {
+    #remember {
+        height: 12.8px;
+        width: 12.8px;
+    }
+}
+
+.form .btn_box {
+    .btn {
+        display: block;
+        width: 317px;
+        height: 40px;
+        color: #fff;
+        background-color: #94193f;
+        text-align: center;
+        font-size: 14px;
+        font-family: "宋体";
+        font-weight: bold;
+    }
+}
+
+.coagent {
+    h5 {
+        color: #333;
+        height: 24px;
+        line-height: 24px;
+        font-size: 12px;
+        font-family: "宋体";
+        font-weight: normal;
+    }
+    ul li {
+        float: left;
+        margin-right: 10px;
+        a {
+            background: url(../img/login_icon_list.png);
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-position: -74px -32px;
+        }
+        &:first-child a {
+            background-position: 0 -32px;
+        }
+        &:last-child a {
+            background-position: -143px -32px;
+        }
+    }
+}
