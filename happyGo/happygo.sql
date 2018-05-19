@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2018-05-19 01:16:24
+-- Generation Time: 2018-05-19 01:28:10
 -- 服务器版本： 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `happygo`
 --
+CREATE DATABASE IF NOT EXISTS `happygo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `happygo`;
 
 -- --------------------------------------------------------
 
@@ -173,7 +175,140 @@ ALTER TABLE `todaytv`
 -- 使用表AUTO_INCREMENT `twonav`
 --
 ALTER TABLE `twonav`
-  MODIFY `townavid` tinyint(4) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '二级导航编号', AUTO_INCREMENT=7;
+  MODIFY `townavid` tinyint(4) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '二级导航编号', AUTO_INCREMENT=7;--
+-- Database: `school`
+--
+CREATE DATABASE IF NOT EXISTS `school` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `school`;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `studentlist`
+--
+
+CREATE TABLE `studentlist` (
+  `stuId` tinyint(1) UNSIGNED NOT NULL,
+  `stuName` varchar(20) NOT NULL,
+  `stuAddress` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `studentlist`
+--
+
+INSERT INTO `studentlist` (`stuId`, `stuName`, `stuAddress`) VALUES
+(1, '张三', '杭州市九堡镇旺田大酒店');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `studentlist`
+--
+ALTER TABLE `studentlist`
+  ADD PRIMARY KEY (`stuId`);
+
+--
+-- 在导出的表使用AUTO_INCREMENT
+--
+
+--
+-- 使用表AUTO_INCREMENT `studentlist`
+--
+ALTER TABLE `studentlist`
+  MODIFY `stuId` tinyint(1) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;--
+-- Database: `taobao`
+--
+CREATE DATABASE IF NOT EXISTS `taobao` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `taobao`;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `account`
+--
+
+CREATE TABLE `account` (
+  `accountId` tinyint(1) UNSIGNED NOT NULL COMMENT '账户ID',
+  `accountName` varchar(20) NOT NULL COMMENT '用户名',
+  `accountPass` varchar(42) NOT NULL COMMENT '用户密码',
+  `accountEmail` varchar(40) NOT NULL COMMENT '用户邮箱'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `account`
+--
+
+INSERT INTO `account` (`accountId`, `accountName`, `accountPass`, `accountEmail`) VALUES
+(1, 'zhangsan', 'woshilisi', ''),
+(2, 'zhangsanshiwoerzi', 'pei', ''),
+(3, '123', '123', '123'),
+(4, '1231', '1231', '1231'),
+(5, 'dasdaqweq', 'asada', 'adsad'),
+(6, '1321313131sa', 'adasd', 'adsad'),
+(8, '123a', '123', '123'),
+(9, '111', '111', '11'),
+(15, 'wangwu', 'woshiwangwo', '123@qq.com'),
+(14, '1112', '123', '123');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `goodlist`
+--
+
+CREATE TABLE `goodlist` (
+  `goodId` tinyint(1) UNSIGNED NOT NULL COMMENT '图片编号',
+  `src` varchar(1000) NOT NULL COMMENT '图片路径',
+  `title` varchar(100) NOT NULL COMMENT '图片标题',
+  `price` varchar(40) NOT NULL COMMENT '价格',
+  `salesNum` varchar(10) NOT NULL COMMENT '销量'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `goodlist`
+--
+
+INSERT INTO `goodlist` (`goodId`, `src`, `title`, `price`, `salesNum`) VALUES
+(5, 'https://img.alicdn.com/bao/uploaded/i4/TB1TOjuRVXXXXbdXXXXXXXXXXXX_!!0-item_pic.jpg_200x200q90.jpg_.webp', '社会精神小伙半袖男体恤韩版潮日系 夏天中国风男装鹤刺绣短袖t恤', '￥118', '销量:580'),
+(6, 'https://img.alicdn.com/bao/uploaded/i2/TB1V871PFXXXXaGXpXXXXXXXXXX_!!0-item_pic.jpg_200x200q90.jpg_.webp', '文乐潮牌原创格子长袖衬衫男日系韩版清新风打底衬衣港风休闲衬衫', '￥49', '销量:11284'),
+(7, 'https://img.alicdn.com/bao/uploaded/i4/508749780/TB28YVjkFXXXXcNXXXXXXXXXXXX_!!508749780.jpg_200x200q90.jpg_.webp', '原创中国风男装复古盘扣七分袖衬衫男棉麻立领唐装亚麻衬衣男上衣', '￥68', '销量:3432'),
+(8, 'https://img.alicdn.com/bao/uploaded/i3/2388509782/TB2Od9xiL5TBuNjSspcXXbnGFXa_!!2388509782.jpg_200x200q90.jpg_.webp', '衣疫 自制款走路带风的七分袖白衬衫', '￥89', '销量:1446'),
+(9, 'https://img.alicdn.com/bao/uploaded/i3/TB1tgnwgDlYBeNjSszcYXHwhFXa_M2.SS2_200x200q90.jpg_.webp', '某地夏季新款纯棉T恤男士原创毛边领半袖T恤', '￥119', '销量:23'),
+(10, 'https://img.alicdn.com/bao/uploaded/i2/1747708633/TB270nSjYJkpuFjy1zcXXa5FFXa_!!1747708633.jpg_200x200q90.jpg_.webp', '(正品包邮)澳洲Bellroy - Notebook Cover牛皮商务笔记本护照封套', '￥485', '销量:2');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`accountId`);
+
+--
+-- Indexes for table `goodlist`
+--
+ALTER TABLE `goodlist`
+  ADD PRIMARY KEY (`goodId`);
+
+--
+-- 在导出的表使用AUTO_INCREMENT
+--
+
+--
+-- 使用表AUTO_INCREMENT `account`
+--
+ALTER TABLE `account`
+  MODIFY `accountId` tinyint(1) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '账户ID', AUTO_INCREMENT=16;
+--
+-- 使用表AUTO_INCREMENT `goodlist`
+--
+ALTER TABLE `goodlist`
+  MODIFY `goodId` tinyint(1) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '图片编号', AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
